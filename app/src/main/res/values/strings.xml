@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">直播录制</string>
+    <string name="accessibility_desc">用于自动识别剪贴板中的直播分享链接。开启后，复制抖音直播链接即可被本应用捕获。</string>
+</resources>

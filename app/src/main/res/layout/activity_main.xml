@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="权限状态"
+            android:textSize="14sp"
+            android:paddingBottom="8dp" />
+
+        <Button
+            android:id="@+id/btnNotif"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="① 允许通知权限" />
+
+        <Button
+            android:id="@+id/btnOverlay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="② 授予悬浮窗权限" />
+
+        <Button
+            android:id="@+id/btnAccess"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="③ 开启无障碍（自动识别剪贴板）" />
+
+        <Button
+            android:id="@+id/btnBattery"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="④ 忽略电池优化（防杀）" />
+
+        <EditText
+            android:id="@+id/etLink"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="粘贴抖音直播链接或 .flv/.ts/.m3u8 直链"
+            android:inputType="textUri"
+            android:paddingTop="12dp" />
+
+        <Button
+            android:id="@+id/btnResolve"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="解析并录制（最高原画）" />
+
+        <TextView
+            android:id="@+id/tvResolve"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:textSize="13sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="任务列表"
+            android:textStyle="bold"
+            android:paddingTop="8dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvTasks"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="解析服务地址（阶段二：填你自己的解析服务）"
+            android:textStyle="bold"
+            android:paddingTop="16dp" />
+
+        <EditText
+            android:id="@+id/etEndpoint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="https://你的服务/resolve?url={url}"
+            android:inputType="textUri" />
+
+        <Button
+            android:id="@+id/btnSaveEndpoint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="保存解析服务地址" />
+
+    </LinearLayout>
+</ScrollView>

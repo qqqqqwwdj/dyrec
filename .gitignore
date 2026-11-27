@@ -1,0 +1,13 @@
+# Flutter / Android 构建产物
+.gradle/
+build/
+app/build/
+local.properties
+*.iml
+.idea/
+.DS_Store
+
+# 签名密钥不要提交
+*.jks
+*.keystore
+key.properties

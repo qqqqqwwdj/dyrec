@@ -1,0 +1,13 @@
+{
+  "name": "dyrec-resolver",
+  "version": "0.1.0",
+  "private": true,
+  "description": "抖音直播直链解析服务模板（签名部分需自行实现）",
+  "main": "resolve-server.js",
+  "scripts": {
+    "start": "node resolve-server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.DyLiveRec" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">#5B8DEF</item>
+    </style>
+</resources>
