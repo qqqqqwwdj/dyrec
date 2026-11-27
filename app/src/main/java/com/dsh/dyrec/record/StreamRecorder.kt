@@ -174,18 +174,20 @@ class StreamRecorder(
         var idleRounds = 0
 
         while (!stop) {
-            var text = fetchText(playlistUrl)
-            if (text == null) {
+            val fetched = fetchText(playlistUrl)
+            if (fetched == null) {
                 if (seen.isEmpty()) return RecordResult(outFile, 0L, false, container, "无法获取 m3u8")
                 break
             }
+            var cur = fetched
             // 主播放列表：选最高码率变体
-            selectVariantIfMaster(text, playlistUrl)?.let { v ->
-                playlistUrl = v
-                text = fetchText(v) ?: text
+            val variant = selectVariantIfMaster(cur, playlistUrl)
+            if (variant != null) {
+                playlistUrl = variant
+                cur = fetchText(variant) ?: cur
             }
-            val isLive = !text.contains("#EXT-X-ENDLIST")
-            val segs = parseSegments(text, playlistUrl, seen)
+            val isLive = !cur.contains("#EXT-X-ENDLIST")
+            val segs = parseSegments(cur, playlistUrl, seen)
             if (segs.isEmpty()) idleRounds++ else idleRounds = 0
 
             for (seg in segs) {
